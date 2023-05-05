@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Text</title>
+  </head>
+  <body>
+    <div id="text"></div>
+    <button onclick="loadText()">Generate random idea!!!! </button>
+    <script>
+      function loadText() {
+        const files = ["file1.txt", "file2.txt", "file3.txt", "file4.txt", "file5.txt", "file6.txt", "file7.txt", "file8.txt", "file9.txt", "file10.txt"];
+        const randomIndex = Math.floor(Math.random() * files.length); 
+        const file = files[randomIndex];
+        const xhr = new XMLHttpRequest(); 
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            document.getElementById("text").textContent = xhr.responseText; 
+          }
+        };
+        xhr.open("GET", file, true);
+        xhr.send(); 
+      }
+    </script>
+  </body>
+</html>
