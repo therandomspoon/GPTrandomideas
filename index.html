@@ -2,11 +2,18 @@
 <html>
   <head>
     <title>Random Text</title>
+    <style>
+      canvas {
+        position: absolute;
+        pointer-events: none;
+        z-index: 999;
+      }
+    </style>
   </head>
   <body>
     <p> DEV - just so you know theres only 10 different strings of text </p>
     <div id="text"></div>
-    <button onclick="loadText()">Generate random idea!!!! </button>
+    <button onclick="loadText(); addConfetti();">Generate random idea!!!! </button>
     <script>
       function loadText() {
         const files = ["file1.txt", "file2.txt", "file3.txt", "file4.txt", "file5.txt", "file6.txt", "file7.txt", "file8.txt", "file9.txt", "file10.txt"];
@@ -21,6 +28,29 @@
         xhr.open("GET", file, true);
         xhr.send(); 
       }
+      
+      function addConfetti() {
+        const canvas = document.createElement("canvas");
+        canvas.id = "confetti-canvas";
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        document.body.appendChild(canvas);
+
+        const confettiSettings = {
+          target: "confetti-canvas",
+          max: 200,
+          size: 1.5,
+          animate: true,
+          props: ["circle", "square", "triangle", "line"],
+          colors: [[255, 0, 0], [0, 255, 0], [0, 0, 255]],
+          clock: 25,
+          rotate: true,
+        };
+
+        const confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+      }
     </script>
+    <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
   </body>
 </html>
