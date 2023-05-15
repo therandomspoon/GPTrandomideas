@@ -5,6 +5,11 @@
     <style>
       body {
         background-color: #2b2b2b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
       }
       canvas {
         position: absolute;
@@ -12,27 +17,29 @@
         z-index: 999;
       }
       p {
-        position: center;
         text-align: center;
         color: white;
       }
       div {
-        position: center;
         text-align: center;
-      }
-      copyButton {
-        position: center;
-        text-align: center;
+        color: white;
       }
       .copyButton {
-        position: center;
+        background-color: #242424;
+        border: none;
+        color: white;
+        padding: 15px 32px;
         text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
       }
-      #copyButton {
-        position: center;
-        text-align: center;
+      .copyButton:hover {
+        transform: scale(1.05);
+        background-color: #333333;
       }
-      
     </style>
     <script async src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
   </head>
