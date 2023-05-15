@@ -19,10 +19,7 @@
       p {
         text-align: center;
         color: white;
-      }
-      div {
-        text-align: center;
-        color: white;
+        margin-bottom: 20px;
       }
       .copyButton {
         background-color: #242424;
@@ -31,7 +28,8 @@
         padding: 15px 32px;
         text-align: center;
         text-decoration: none;
-        display: inline-block;
+        display: block;
+        margin-top: 20px;
         font-size: 16px;
         border-radius: 8px;
         transition: all 0.3s ease;
@@ -45,11 +43,7 @@
   </head>
   <body>
     <p>DEV - just so you know there are only 10 different strings of text</p>
-    <br> </br>
-    <p> </p>
     <div id="text"></div>
-    <br> </br>
-    <p> </p>
     <button class="copyButton" id="copyButton" onclick="loadText(); addConfetti();">Generate random idea!!!!</button>
     <script>
       function loadText() {
