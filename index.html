@@ -6,6 +6,7 @@
       body {
         background-color: #2b2b2b;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 100vh;
@@ -44,6 +45,7 @@
   <body>
     <p>DEV - just so you know there are only 10 different strings of text</p>
     <div id="text"></div>
+    <br>
     <button class="copyButton" id="copyButton" onclick="loadText(); addConfetti();">Generate random idea!!!!</button>
     <script>
       function loadText() {
